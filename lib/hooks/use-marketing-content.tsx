@@ -12,6 +12,7 @@ type MarketingContentContextType = {
     body: string;
     category: string;
   }) => void;
+  deleteMarketingContent: (index: number) => void;
 };
 
 const MarketingContentContext = createContext<MarketingContentContextType | undefined>(undefined);
@@ -41,9 +42,22 @@ export const MarketingContentProvider = ({ children }: { children: ReactNode }) 
     setMarketingContents([...marketingContents, marketingContent]);
   };
 
+  const deleteMarketingContent = (index: number) => {
+    if (index < 0 || index >= marketingContents.length) {
+      console.error(`Chyba: Index ${index} je mimo rozsah. K dispozici je ${marketingContents.length} příspěvků.`);
+      return;
+    }
+    
+    setMarketingContents(prevContents => {
+      const newContents = [...prevContents];
+      newContents.splice(index, 1);
+      return newContents;
+    });
+  };
+
   return (
     <MarketingContentContext.Provider
-      value={{ marketingContents, addMarketingContent }}
+      value={{ marketingContents, addMarketingContent, deleteMarketingContent }}
     >
       {children}
     </MarketingContentContext.Provider>
