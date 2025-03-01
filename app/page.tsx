@@ -7,6 +7,7 @@ import { Inter } from 'next/font/google';
 import { useMarketingActions } from "@/lib/actions/marketingActions";
 import { Header } from "@/components/Header";
 import { MainContent } from "@/components/MainContent";
+import { RenderTools } from "@/components/RenderTools";
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -14,11 +15,13 @@ const inter = Inter({ subsets: ['latin'] });
 function PageContent() {
   // Registrujeme všechny marketingové akce - aby je Copybot mohl používat
   useMarketingActions();
-
+  
+  // Přidáváme RenderTools pro zobrazení nástrojů v UI
   return (
     <div className="w-full h-screen flex flex-col bg-gradient-to-br from-[#0F133F]/5 to-[#0F133F]/10">
       <Header />
       <MainContent />
+      <RenderTools />
     </div>
   );
 }

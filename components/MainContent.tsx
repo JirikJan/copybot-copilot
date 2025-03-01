@@ -42,7 +42,7 @@ export function MainContent() {
       <div className="w-1/3 h-full p-5">
         <CopilotSidebar
           labels={{
-            title: "Marketingový asistent",
+            title: "Copybot Agent",
             initial: "Ahoj! 👋 Jak vám mohu dnes pomoci s marketingovým obsahem?",
           }}
         />

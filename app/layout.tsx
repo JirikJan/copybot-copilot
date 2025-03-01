@@ -21,13 +21,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <title>Marketingový asistent</title>
+        <title>Copybotí Asisteent</title>
         <meta name="description" content="Aplikace pro správu marketingového obsahu" />
       </head>
       <body className={inter.className}>
         <CopilotKit 
-          publicApiKey={COPILOT_CLOUD_PUBLIC_API_KEY || ""} 
-          
+          publicApiKey={COPILOT_CLOUD_PUBLIC_API_KEY || ""}
         >
           {children}
         </CopilotKit>
