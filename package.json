@@ -9,8 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@copilotkit/react-core": "^1.1.1",
-    "@copilotkit/react-textarea": "^1.1.1",
+    "@copilotkit/react-core": "^1.6.0",
+    "@copilotkit/react-textarea": "^1.6.0",
     "@copilotkit/react-ui": "^1.6.0",
     "@copilotkit/runtime-client-gql": "^1.1.0",
     "@radix-ui/react-checkbox": "^1.1.1",
@@ -19,6 +19,7 @@
     "@radix-ui/react-select": "^2.1.6",
     "@radix-ui/react-slot": "^1.1.0",
     "@radix-ui/react-toast": "^1.2.1",
+    "@swc/helpers": "0.5.5",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.12",
@@ -28,6 +29,7 @@
     "queue-microtask": "^1.2.3",
     "react": "^18",
     "react-dom": "^18",
+    "react-remove-scroll": "^2.6.3",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7"
   },
