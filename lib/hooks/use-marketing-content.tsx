@@ -20,7 +20,7 @@ export const MarketingContentProvider = ({ children }: { children: ReactNode }) 
   const [marketingContents, setMarketingContents] = useState<MarketingContent[]>(marketingContentHistory);
 
   useCopilotReadable({
-    description: "Historie marketingového obsahu",
+    description: "Příspěvky vytvořené uživatelem",
     value: marketingContents,
   });
 
