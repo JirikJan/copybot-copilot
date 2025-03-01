@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @layer base {
   :root {
     --copilot-kit-primary-color: #0F133F;
@@ -12,25 +14,25 @@
     --color-gold: 43 70% 41%; /* #B38C1F */
     
     /* UI Elements */
-    --background: var(--color-cream);
+    --background: 0 0% 100%;
     --foreground: var(--color-navy);
     --card: 0 0% 100%;
     --card-foreground: var(--color-navy);
     --popover: 0 0% 100%;
     --popover-foreground: var(--color-navy);
     --primary: var(--color-navy);
-    --primary-foreground: var(--color-cream);
+    --primary-foreground: 0 0% 100%;
     --secondary: var(--color-gold);
     --secondary-foreground: 0 0% 100%;
-    --muted: 47 30% 90%;
-    --muted-foreground: 235 30% 30%;
-    --accent: var(--color-gold);
-    --accent-foreground: 0 0% 100%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: var(--color-cream);
+    --accent-foreground: var(--color-navy);
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: var(--color-gold);
-    --input: var(--color-cream);
-    --ring: var(--color-navy);
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: var(--color-gold);
     --radius: 0.75rem;
     --chart-1: var(--color-navy);
     --chart-2: var(--color-gold);
@@ -40,25 +42,25 @@
   }
 
   .dark {
-    --background: var(--color-navy);
-    --foreground: var(--color-cream);
-    --card: 235 50% 20%;
-    --card-foreground: var(--color-cream);
-    --popover: 235 50% 20%;
-    --popover-foreground: var(--color-cream);
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 9.8%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 9.8%;
+    --popover-foreground: 210 40% 98%;
     --primary: var(--color-cream);
-    --primary-foreground: var(--color-navy);
+    --primary-foreground: 222.2 47.4% 11.2%;
     --secondary: var(--color-gold);
-    --secondary-foreground: 0 0% 100%;
-    --muted: 235 40% 25%;
-    --muted-foreground: 47 30% 80%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
     --accent: var(--color-gold);
-    --accent-foreground: 0 0% 100%;
+    --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: var(--color-gold);
-    --input: 235 40% 25%;
-    --ring: var(--color-cream);
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: var(--color-gold);
     --chart-1: var(--color-cream);
     --chart-2: var(--color-gold);
     --chart-3: 235 40% 60%;
@@ -71,7 +73,9 @@
   * {
     @apply border-border;
   }
-  body {
+  
+  html, body {
+    font-family: 'Inter', sans-serif;
     @apply bg-background text-foreground;
   }
   
@@ -81,7 +85,7 @@
   }
   
   /* Card styling */
-  .rounded-md {
+  .rounded-md, .rounded-lg {
     @apply shadow-sm hover:shadow-md transition-shadow duration-200;
   }
   
@@ -93,8 +97,8 @@
 
 /* Modern scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -109,6 +113,31 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--accent));
+}
+
+/* Marketing Assistant Specific Styles */
+.marketing-assistant {
+  @apply bg-gradient-to-br from-white to-accent/10;
+}
+
+.content-card {
+  @apply bg-white border border-border/30 shadow-sm hover:shadow-md transition-all duration-200 rounded-xl;
+}
+
+.category-badge {
+  @apply px-3 py-1 rounded-full text-xs font-medium;
+}
+
+.form-container {
+  @apply bg-white rounded-xl shadow-md border border-border/20;
+}
+
+.content-container {
+  @apply bg-muted/50 backdrop-blur-sm;
+}
+
+.header-container {
+  @apply bg-gradient-to-r from-primary to-primary/90 text-white shadow-md;
 }
 
 .copilotKitDevConsole {

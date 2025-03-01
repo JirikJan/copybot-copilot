@@ -4,6 +4,7 @@ import { MarketingContentThread } from "@/components/MarketingContentThread";
 import { MarketingContentProvider } from "@/lib/hooks/use-marketing-content";
 import { CopilotKit } from "@copilotkit/react-core";
 import "@copilotkit/react-textarea/styles.css";
+import { Main } from "@/app/main";
 import { CopybotSidebar } from "@/components/CopybotSidebar";
 
 export default function Home() {
@@ -12,9 +13,7 @@ export default function Home() {
   return (
     <div className="h-screen">
       <CopilotKit publicApiKey={COPILOT_CLOUD_PUBLIC_API_KEY}>
-        <MarketingContentProvider>
-          <MarketingContentThread />
-        </MarketingContentProvider>
+        <Main />
       </CopilotKit>
     </div>
   );

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
 import { CopilotTextarea } from "@copilotkit/react-textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "./ui/label";
 
 export function ContentForm() {
@@ -23,9 +23,9 @@ export function ContentForm() {
   return (
     <div className="space-y-5 h-full flex flex-col">
       <div className="space-y-2">
-        <Label htmlFor="category" className="text-sm font-medium">Kategorie obsahu</Label>
+        <Label htmlFor="category" className="text-sm font-medium text-primary">Kategorie obsahu</Label>
         <Select value={category} onValueChange={setCategory}>
-          <SelectTrigger id="category" className="border-secondary/50 focus:border-secondary">
+          <SelectTrigger id="category" className="border-secondary/30 focus:border-secondary focus:ring-1 focus:ring-secondary/30 bg-white">
             <SelectValue placeholder="Vyberte kategorii" />
           </SelectTrigger>
           <SelectContent>
@@ -41,10 +41,10 @@ export function ContentForm() {
       </div>
       
       <div className="flex-grow flex flex-col">
-        <Label htmlFor="content" className="text-sm font-medium mb-2">Obsah</Label>
+        <Label htmlFor="content" className="text-sm font-medium text-primary mb-2">Obsah</Label>
         <CopilotTextarea
           id="content"
-          className="min-h-[350px] flex-grow border p-3 overflow-hidden rounded-lg focus:border-secondary focus:ring-1 focus:ring-secondary"
+          className="min-h-[350px] flex-grow border border-border/30 p-3 overflow-hidden rounded-lg focus:border-secondary focus:ring-1 focus:ring-secondary/30 bg-white shadow-sm"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Napište svůj marketingový text..."
@@ -56,11 +56,11 @@ export function ContentForm() {
       </div>
       
       <Button 
-        className="w-full bg-secondary hover:bg-secondary/90 text-white font-medium py-2"
+        className="w-full bg-secondary hover:bg-secondary/90 text-white font-medium py-2 shadow-sm"
         disabled={!input} 
         onClick={handleSubmit}
       >
-        Odeslat
+        Generovat obsah
       </Button>
     </div>
   );
