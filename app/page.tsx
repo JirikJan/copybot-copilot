@@ -1,20 +1,33 @@
 "use client";
 
-import { EmailThread } from "@/components/EmailThread";
-import { EmailsProvider } from "@/lib/hooks/use-emails";
-import { CopilotKit } from "@copilotkit/react-core";
+import { MarketingContentProvider } from "@/lib/hooks/use-marketing-content";
 import "@copilotkit/react-textarea/styles.css";
+import "@copilotkit/react-ui/styles.css";
+import { Inter } from 'next/font/google';
+import { useMarketingActions } from "@/lib/actions/marketingActions";
+import { Header } from "@/components/Header";
+import { MainContent } from "@/components/MainContent";
 
-export default function Home() {
-  const COPILOT_CLOUD_PUBLIC_API_KEY = process.env.NEXT_PUBLIC_COPILOT_CLOUD_PUBLIC_API_KEY;
+const inter = Inter({ subsets: ['latin'] });
 
+// Komponenta pro obsah stránky
+function PageContent() {
+  // Registrujeme všechny marketingové akce - aby je Copybot mohl používat
+  useMarketingActions();
+  
   return (
-    <div className="h-screen">
-      <CopilotKit publicApiKey={COPILOT_CLOUD_PUBLIC_API_KEY}>
-        <EmailsProvider>
-          <EmailThread />
-        </EmailsProvider>
-      </CopilotKit>
+    <div className="w-full h-screen flex flex-col bg-gradient-to-br from-[#0F133F]/5 to-[#0F133F]/10">
+      <Header />
+      <MainContent />
     </div>
   );
 }
+
+export default function Home() {
+  return (
+    <MarketingContentProvider>
+      <PageContent />
+    </MarketingContentProvider>
+  );
+}
+
