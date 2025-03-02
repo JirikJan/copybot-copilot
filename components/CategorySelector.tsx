@@ -25,6 +25,7 @@ export function CategorySelector({ value, onChange }: CategorySelectorProps) {
           <SelectItem value="linkedin" className="hover:bg-accent/10 rounded-md transition-colors">LinkedIn</SelectItem>
           <SelectItem value="newsletter" className="hover:bg-accent/10 rounded-md transition-colors">Newsletter</SelectItem>
           <SelectItem value="other" className="hover:bg-accent/10 rounded-md transition-colors">Jiné</SelectItem>
+          <SelectItem value="all" className="hover:bg-accent/10 rounded-md transition-colors">Draft mailingové kampaně</SelectItem>
         </SelectContent>
       </Select>
     </FormSection>

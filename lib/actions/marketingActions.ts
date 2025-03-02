@@ -1,6 +1,7 @@
 import { useCopilotAction } from "@copilotkit/react-core";
 import { useMarketingContent } from "@/lib/hooks/use-marketing-content";
 
+
 /**
  * Hook pro registraci všech akcí souvisejících s marketingovým obsahem
  */

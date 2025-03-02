@@ -7,6 +7,7 @@ import { Inter } from 'next/font/google';
 import { useMarketingActions } from "@/lib/actions/marketingActions";
 import { Header } from "@/components/Header";
 import { MainContent } from "@/components/MainContent";
+import { MarketingContentThread } from '@/components/marketing/MarketingContentThread';
 
 const inter = Inter({ subsets: ['latin'] });
 
