@@ -7,52 +7,6 @@ import { useMarketingContent } from "@/lib/hooks/use-marketing-content";
 export function useMarketingActions() {
   const { addMarketingContent, deleteMarketingContent, marketingContents } = useMarketingContent();
 
-  // Akce pro vytvoření marketingového obsahu
-  useCopilotAction({
-    name: "createMarketingContent",
-    description: "Vytvoří marketingový obsah na základě zadaného tématu, kategorie a délky. Vytvořený obsah bude umístěn do aplikace v sekci marketingového obsahu.",
-    parameters: [
-      {
-        name: "topic",
-        type: "string",
-        description: "Téma marketingového obsahu",
-        required: true,
-      },
-      {
-        name: "category",
-        type: "string",
-        description: "Kategorie marketingového obsahu (blog, instagram, facebook, twitter, linkedin, newsletter, other)",
-        required: true,
-      },
-      {
-        name: "length",
-        type: "string",
-        description: "Délka marketingového obsahu (short, medium, long)",
-        required: true,
-      },
-    ],
-    handler: async ({ topic, category, length }) => {
-      console.log("Creating marketing content", { topic, category, length });
-      
-      // Simulate API call to generate content
-      const contentLengths = {
-        short: 100,
-        medium: 250,
-        long: 500,
-      };
-      
-      const lengthInChars = contentLengths[length as keyof typeof contentLengths] || 250;
-      
-      // Add the marketing content
-      addMarketingContent({
-        body: `Marketingový obsah na téma "${topic}" pro platformu ${category}. Délka: ${length}.`,
-        category: category as string,
-      });
-      
-      return `Vytvořil jsem nový ${category} příspěvek na téma "${topic}" s délkou "${length}" a umístil jej do aplikace.`;
-    },
-  });
-
   // Akce pro přidávání marketingového obsahu
   useCopilotAction({
     name: "addMarketingContent",

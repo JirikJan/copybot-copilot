@@ -2,7 +2,7 @@ import React from 'react';
 import { useCopilotAction } from "@copilotkit/react-core"; 
 
 /**
- * Komponenta pro renderování nástrojů v UI
+ * Komponenta pro renderování externích nástrojů v UI
  * Tato komponenta neimplementuje funkčnost nástrojů, pouze zajišťuje jejich zobrazení v UI
  */
 export function RenderTools() {

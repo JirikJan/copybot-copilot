@@ -3,6 +3,7 @@ import { MarketingContentThread } from "@/components/MarketingContentThread";
 import { useMarketingContent } from "@/lib/hooks/use-marketing-content";
 import { CreatedContentList } from "@/components/CreatedContentList";
 import { CopilotSidebar } from "@copilotkit/react-ui";
+import { RenderTools } from "@/components/RenderTools";
 
 export function MainContent() {
   const { deleteMarketingContent } = useMarketingContent();
@@ -42,10 +43,12 @@ export function MainContent() {
       <div className="w-1/3 h-full p-5">
         <CopilotSidebar
           labels={{
-            title: "Copybot Agent",
+            title: "Marketingový asistent",
             initial: "Ahoj! 👋 Jak vám mohu dnes pomoci s marketingovým obsahem?",
           }}
         />
+        {/* Renderování nástrojů pro UI */}
+        <RenderTools />
       </div>
     </div>
   );
