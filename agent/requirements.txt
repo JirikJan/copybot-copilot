@@ -1,0 +1,8 @@
+langgraph
+langchain-core
+langchain-community
+langchain-openai
+langchain-anthropic
+firecrawl-py
+--extra-index-url https://copilotkit.gateway.scarf.sh/simple/
+copilotkit[python]
