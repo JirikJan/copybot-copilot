@@ -72,7 +72,7 @@ export function MainContent() {
           }}
         />
         {/* Renderování nástrojů pro UI */}
-        <RenderTools /> 
+        <RenderTools />
       </div>
     </div>
   );

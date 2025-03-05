@@ -27,6 +27,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className={inter.className}>
         <CopilotKit 
           publicApiKey={COPILOT_CLOUD_PUBLIC_API_KEY || ""}
+          
         >
           {children}
         </CopilotKit>
